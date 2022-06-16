@@ -42,18 +42,16 @@ Keyboard Shortcuts:
 
 ——————————
 
-Pocket Crystal League +:
-
-PCL+ is a community-made Pocket Crystal League mod/expansion created by Hyperion_21, Tukurai, DarkAnarchist, and 2fast4you98.
-The save files are completely separate from Vanilla, so feel free to check it out!
-
-GitHub: https://github.com/Hyperion-21/pokecards_plus
-
-——————————
-
 Related Discord Servers:
 
 - Pocket Crystal Discord: https://discord.gg/PEUqB45Hmy
 Fan-made server for discussion about the game.
 
 If you have a Discord server/channel related to the game that you want me to include here (as long as it's SFW), let me know!
+
+——————————
+
+PCL Mods:
+
+Pocket Crystal League + (Plus): https://github.com/Hyperion-21/pokecards_plus
+A standalone, community-made PCL expansion that adds cards from Generations 3-7. Early state, may have some issues. Save files are separate from Vanilla though, so feel free to check it out!
