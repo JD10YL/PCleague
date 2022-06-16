@@ -1,6 +1,6 @@
 Hello everybody! The community-made mod "Pocket Crystal League +" with expanded content has been released!
 
-PCL+ is a community-made Pocket Crystal League mod/expansion created by Hyperion_21, Tukurai, DarkAnarchist, and 2fast4you98, that adds pokemon from Generations 3-7.
+PCL+ is a community-made Pocket Crystal League mod/expansion created by Hyperion_21, Tukurai, DarkAnarchist, and 2fast4you98, that adds cards from Generations 3-7.
 Disclaimer: the mod is still in a very early state, and will most likely be unbalanced! Make sure to report any bugs you find in the Discord Server!
 
 - GitHub: https://github.com/Hyperion-21/pokecards_plus
