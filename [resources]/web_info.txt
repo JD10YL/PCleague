@@ -53,5 +53,5 @@ If you have a Discord server/channel related to the game that you want me to inc
 
 PCL Mods:
 
-Pocket Crystal League + (Plus): https://github.com/Hyperion-21/pokecards_plus
-A standalone, community-made PCL expansion that adds cards from Generations 3-7. Early state, may have some issues. Save files are separate from Vanilla though, so feel free to check it out!
+Pocket Crystal League +: https://github.com/Hyperion-21/pokecards_plus
+A standalone, community-made PCL expansion that adds cards from Generations 3-7. Save files are separate from vanilla, so feel free to check it out!
