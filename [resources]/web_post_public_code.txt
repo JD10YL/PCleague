@@ -3,3 +3,6 @@ Now that I'm comfortable with where the game is at, I decided to finally release
 Thank you all for your support, and I hope you can understand and forgive my messy code. Have a very nice day!
 
 https://gitlab.com/moodytail/pokecards
+
+License: Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)
+https://creativecommons.org/licenses/by-nc/4.0/

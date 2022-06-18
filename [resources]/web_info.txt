@@ -1,4 +1,4 @@
-The project is now Open Source!
+The entire code is now public!
 https://gitlab.com/moodytail/pokecards
 
 ——————————
@@ -45,7 +45,10 @@ Keyboard Shortcuts:
 Related Discord Servers:
 
 - Pocket Crystal Discord: https://discord.gg/PEUqB45Hmy
-Fan-made server for discussion about the game.
+Community-made server for discussion about the game.
+
+- Pocket Crystal League Modding Community: https://discord.gg/zs5ESmqZM8
+Community-made server for development and discussion of mods.
 
 If you have a Discord server/channel related to the game that you want me to include here (as long as it's SFW), let me know!
 
