@@ -1,6 +1,6 @@
 randomize(); //random seed
 #macro game_name "Pocket Emerald League"
-#macro game_version "v0.0.0.1"
+#macro game_version "v0.0.0.2"
 window_set_caption(game_name);
 //————————————————————————————————————————————————————————————————————————————————————————————————————
 depth=-2000;
