@@ -65,8 +65,8 @@ repeat (card_maindeck_total) {
 	if ob_main.playing_tutorial=true {
 		if ob_main.main_card_id[i]=001 or ob_main.main_card_id[i]=004 or ob_main.main_card_id[i]=007 { card_shuffle[i]=0; } //bulbasaur, charmander, squirtle
 		else if ob_main.main_card_id[i]=152 or ob_main.main_card_id[i]=155 or ob_main.main_card_id[i]=158 { card_shuffle[i]=2; } //chikorita, cyndaquil, totodile
+		else if ob_main.main_card_id[i]=252 or ob_main.main_card_id[i]=255 or ob_main.main_card_id[i]=258 { card_shuffle[i]=1; } //treecko, torchic, mudkip
 		else if ob_main.main_card_id[i]=016 { card_shuffle[i]=4; } //pidgey
-		else if ob_main.main_card_id[i]=021 { card_shuffle[i]=1; } //spearow
 		else if ob_main.main_card_id[i]=019 { card_shuffle[i]=3; } //rattata
 	}
 	else {

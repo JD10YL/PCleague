@@ -52,7 +52,7 @@ if card_cat=0 {
 		var allow_id_pseudo=false, allow_id_fossil=false, allow_id_starter=false, allow_id_baby=false;
 		//————————————————————————————————————————————————————————————————————————————————————————————————————
 		if random_card=true and enemy_randomizer=false {
-			if random_group_chance<1 and ob_main.latest_zone>0 { //0.01% secret card
+			if random_group_chance<1 { //0.01% secret card
 				card_id=irandom_range(1,secret_cards_total)+2000;
 				card_innate=1;
 			}
@@ -64,10 +64,10 @@ if card_cat=0 {
 				card_id=irandom_range(1,normal_poke_id_max);
 				card_innate=1;
 				//
-				if random_group_chance<216 and ob_main.latest_zone>0 { choose_id_enigma=true; } //0.15% enigma
-				else if random_group_chance<466 and ob_main.latest_zone>0 { choose_id_stage_2=true; } //2.5% stage 2
-				else if random_group_chance<516 and ob_main.latest_zone>0 { choose_id_stage_3=true; } //0.5% stage 3
-				else { choose_id_normal=true; } //94.84% stage 1 or baby
+				if random_group_chance<221 { choose_id_enigma=true; } //0.2% enigma
+				else if random_group_chance<471 { choose_id_stage_2=true; } //2.5% stage 2
+				else if random_group_chance<521 { choose_id_stage_3=true; } //0.5% stage 3
+				else { choose_id_normal=true; } //94.79% stage 1 or baby
 				//
 				var random_id_chance=irandom(99); if random_id_chance<50 { allow_id_pseudo=true; } //50% pseudo allowed
 				var random_id_chance=irandom(99); if random_id_chance<50 { allow_id_fossil=true; } //50% fossil allowed

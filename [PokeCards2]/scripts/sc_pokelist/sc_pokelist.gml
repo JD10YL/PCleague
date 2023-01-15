@@ -1556,6 +1556,61 @@ switch (card_id) {
 		card_base_hp=100; card_base_atk=100+100; card_base_def=100+100;
 		card_grid_x=7; card_grid_y=25; break;
 	//
+	case 252:
+		card_name="Treecko";
+		card_stage=1; card_evo[0]=253; card_starter=true;
+		card_type_a=01; card_type_b=-1;
+		card_base_hp=40; card_base_atk=45+65; card_base_def=35+55;
+		card_grid_x=1; card_grid_y=26; break;
+	case 253:
+		card_name="Grovyle";
+		card_stage=1; card_evo[0]=254; card_starter=true;
+		card_type_a=01; card_type_b=-1;
+		card_base_hp=50; card_base_atk=65+85; card_base_def=45+65;
+		card_grid_x=2; card_grid_y=26; break;
+	case 254:
+		card_name="Sceptile";
+		card_stage=1; card_starter=true;
+		card_type_a=01; card_type_b=-1;
+		card_base_hp=70; card_base_atk=85+105; card_base_def=65+85;
+		card_grid_x=3; card_grid_y=26; break;
+	case 255:
+		card_name="Torchic";
+		card_stage=1; card_evo[0]=256; card_starter=true;
+		card_type_a=02; card_type_b=-1;
+		card_base_hp=45; card_base_atk=60+70; card_base_def=40+50;
+		card_grid_x=5; card_grid_y=26; break;
+	case 256:
+		card_name="Combusken";
+		card_stage=1; card_evo[0]=257; card_starter=true;
+		card_type_a=02; card_type_b=06;
+		card_base_hp=60; card_base_atk=85+85; card_base_def=60+60;
+		card_grid_x=6; card_grid_y=26; break;
+	case 257:
+		card_name="Blaziken";
+		card_stage=1; card_starter=true;
+		card_type_a=02; card_type_b=06;
+		card_base_hp=80; card_base_atk=120+110; card_base_def=70+70;
+		card_grid_x=7; card_grid_y=26; break;
+	case 258:
+		card_name="Mudkip";
+		card_stage=1; card_evo[0]=259; card_starter=true;
+		card_type_a=03; card_type_b=-1;
+		card_base_hp=50; card_base_atk=70+50; card_base_def=50+50;
+		card_grid_x=9; card_grid_y=26; break;
+	case 259:
+		card_name="Marshtomp";
+		card_stage=1; card_evo[0]=260; card_starter=true;
+		card_type_a=03; card_type_b=09;
+		card_base_hp=70; card_base_atk=85+60; card_base_def=70+70;
+		card_grid_x=10; card_grid_y=26; break;
+	case 260:
+		card_name="Swampert";
+		card_stage=1; card_starter=true;
+		card_type_a=03; card_type_b=09;
+		card_base_hp=100; card_base_atk=110+85; card_base_def=90+90;
+		card_grid_x=11; card_grid_y=26; break;
+	//
 	case 2001:
 		card_name="MissingNo.";
 		card_stage=1; card_secret=true;

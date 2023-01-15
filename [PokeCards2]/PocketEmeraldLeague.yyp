@@ -28,6 +28,7 @@
     {"id":{"name":"sn_rare","path":"sounds/sn_rare/sn_rare.yy",},"order":9,},
     {"id":{"name":"ms_battle_intro","path":"sounds/ms_battle_intro/ms_battle_intro.yy",},"order":2,},
     {"id":{"name":"sp_back_pixel","path":"sprites/sp_back_pixel/sp_back_pixel.yy",},"order":10,},
+    {"id":{"name":"sc_gen3","path":"scripts/sc_gen3/sc_gen3.yy",},"order":18,},
     {"id":{"name":"sn_coin","path":"sounds/sn_coin/sn_coin.yy",},"order":3,},
     {"id":{"name":"sp_type_chart","path":"sprites/sp_type_chart/sp_type_chart.yy",},"order":6,},
     {"id":{"name":"fn_m6x11_L","path":"fonts/fn_m6x11_L/fn_m6x11_L.yy",},"order":3,},
