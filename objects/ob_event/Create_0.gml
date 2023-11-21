@@ -37,6 +37,8 @@ if event_kind=ref_event_cardpack or event_kind=ref_event_berry {
 			instance_create_layer(screen_main_x+118+(73*i),screen_main_y+104,"instances",ob_card);
 			i++;
 		}
+		//
+		ob_main.stats_cardpacks++;
 	}
 	else if event_kind=ref_event_berry {
 		card_prize=4;
@@ -61,6 +63,8 @@ if event_kind=ref_event_cardpack or event_kind=ref_event_berry {
 			instance_create_layer(screen_main_x+118+(73*i),screen_main_y+104,"instances",ob_card);
 			i++;
 		}
+		//
+		ob_main.stats_berrypacks++;
 	}
 	//
 	button_create=instance_create_layer(screen_main_x+cam_w-24,screen_main_y+cam_h-24,"instances",ob_button_16x16);
@@ -77,6 +81,8 @@ else if event_kind=ref_event_freecard {
 		instance_create_layer(screen_main_x+155+(72*i),screen_main_y+104,"instances",ob_card);
 		i++;
 	}
+	//
+	ob_main.stats_freecards++;
 }
 //————————————————————————————————————————————————————————————————————————————————————————————————————
 else if event_kind=ref_event_grass or event_kind=ref_event_fire or event_kind=ref_event_water {
@@ -119,6 +125,8 @@ else if event_kind=ref_event_grass or event_kind=ref_event_fire or event_kind=re
 	//
 	button_create=instance_create_layer(screen_main_x+cam_w-24,screen_main_y+cam_h-24,"instances",ob_button_16x16);
 	button_create.button_id=2;
+	//
+	ob_main.stats_cardpacks++;
 }
 //————————————————————————————————————————————————————————————————————————————————————————————————————
 else if event_kind=ref_event_levelup or event_kind=ref_event_evolution or

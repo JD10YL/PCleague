@@ -133,6 +133,9 @@ else { //all other buttons
 				else if button_id=104 {
 					ob_main.type_chart_toggle=true;
 				}
+				else if button_id=105 {
+					ob_main.statistics_screen_toggle=true;
+				}
 			}
 			button_state=1;
 		}
@@ -186,6 +189,7 @@ else { //all other buttons
 				case 101: ob_main.tooltip_text="Reset all options."; break;
 				case 103: ob_main.tooltip_text="Credits."; break;
 				case 104: ob_main.tooltip_text="Type-advantage chart."; break;
+				case 105: ob_main.tooltip_text="Player stats."; break;
 			}
 			ob_main.tooltip_lines=1;
 		}

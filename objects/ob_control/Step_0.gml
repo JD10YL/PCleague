@@ -383,7 +383,7 @@ if ob_main.playing_tutorial=false or (ob_main.playing_tutorial=true and (sc_tuto
 			battler_turn=2;
 			if turn_num>1 { enemycard_draw_points+=2; }
 			else { enemycard_draw_points+=5; }
-			card_draw_points=0;
+			//card_draw_points=0;
 			enemy_turn_timer=irandom_range(30,60);
 			//
 			for (var i=0; i<=4; i++;) {
@@ -404,7 +404,7 @@ if ob_main.playing_tutorial=false or (ob_main.playing_tutorial=true and (sc_tuto
 			battler_turn=1;
 			if turn_num>1 { card_draw_points+=2; }
 			else { card_draw_points+=5; }
-			enemycard_draw_points=0;
+			//enemycard_draw_points=0;
 			//
 			for (var i=5; i<=9; i++;) {
 				if card_space_id[i].occupy_id!=-1 {

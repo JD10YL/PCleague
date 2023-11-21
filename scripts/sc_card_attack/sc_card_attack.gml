@@ -97,6 +97,11 @@ with (argument1) {
 				if card_target.card_hp<=0 {
 					sc_playsound(sn_faint,50,false,false);
 					//
+					if ob_main.playing_tutorial=false {
+						if card_target.card_enemy=false { ob_main.stats_cards_lost++; }
+						else { ob_main.stats_cards_defeated++; }
+					}
+					//
 					if sc_glyph_check(card_target,ref_glyph_harvest,true) { //glyph: harvest
 						if card_target.card_enemy=false {
 							for (var i=0; i<=3; i++;) {

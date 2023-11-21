@@ -72,6 +72,7 @@ if apply_event=true {
 			}
 			//
 			event_applied=true;
+			ob_main.stats_levelups++;
 			ob_main.event_cost_standby+=ob_main.event_cost_standby_levelup;
 			sc_playsound(sn_upgrade,50,false,false);
 			ob_main.main_card_level[card_id_in_space[0].num_in_all]=card_id_in_space[0].card_level;
@@ -92,6 +93,7 @@ if apply_event=true {
 			}
 			//
 			event_applied=true;
+			if evolution_retry=false { ob_main.stats_evolutions++; }
 			evolution_retry=true;
 			sc_playsound(sn_upgrade,50,false,false);
 			ob_main.main_card_id[card_id_in_space[0].num_in_all]=card_id_in_space[0].card_id;
@@ -115,6 +117,7 @@ if apply_event=true {
 			}
 			//
 			event_applied=true;
+			ob_main.stats_glyphs_added++;
 			sc_playsound(sn_upgrade,50,false,false);
 			ob_main.main_card_glyph_a[card_id_in_space[0].num_in_all]=card_id_in_space[0].card_glyph_a;
 			ob_main.main_card_glyph_b[card_id_in_space[0].num_in_all]=card_id_in_space[0].card_glyph_b;
@@ -139,6 +142,7 @@ if apply_event=true {
 			}
 			//
 			event_applied=true;
+			ob_main.stats_tributes++;
 			ob_main.main_card_innate[card_id_in_space[0].num_in_all]=card_id_in_space[0].card_innate;
 			ob_main.main_card_innate[card_id_in_space[1].num_in_all]=card_id_in_space[1].card_innate;
 		}

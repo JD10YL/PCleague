@@ -1,3 +1,14 @@
+[v1.7.0.0] - November 21, 2023
+
+- Draw Points now remain after each turn when not used.
+- Further raised drop chance for Legendary/Mythical cards.
+- Significantly lowered costs for levelling up cards.
+- Modified all trainer decks (including Gym Leaders and Crystal League, especially Duncan's).
+- Save file statistics (time played, total battles, etc.) added to the Options menu.
+- Some other minor improvements.
+
+——————————
+
 [v1.6.0.0] - June 13, 2022
 
 - Electric-types now recquire Lum Berries.

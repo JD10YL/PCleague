@@ -50,11 +50,17 @@ Community-made server for discussion about the game.
 - Pocket Crystal League Modding Community: https://discord.gg/zs5ESmqZM8
 Community-made server for development and discussion of mods.
 
+- PKMN Crown Community: https://discord.gg/gc2GvSGp5f
+Community for the PKMN Crown fangame, with its own PCL discussion channel.
+
 If you have a Discord server/channel related to the game that you want me to include here (as long as it's SFW), let me know!
 
 ——————————
 
 PCL Mods:
 
-Pocket Crystal League +: https://github.com/Hyperion-21/pokecards_plus
-A standalone, community-made PCL expansion. Save files are separate from vanilla, so feel free to check it out!
+- Pocket Crystal League +: https://github.com/Hyperion-21/pokecards_plus
+A standalone, community-made PCL expansion that adds a lot of new cards and features. Save files are separate from vanilla, so feel free to check it out!
+
+- Pocket Crystal League ++: https://discord.gg/gc2GvSGp5f
+A standalone PCL expansion based on PCL+, with even MORE new cards and features. Save files are separate both from vanilla and PCL+, so feel free to check it out!

@@ -88,13 +88,13 @@ if card_draw_points>=card_drawcost_main and card_maindeck_total>0 {
 	sc_drawtext(cam_x+cam_w-38,cam_y+197,string(card_drawcost_main) + " DP",global.color_character_light,global.color_black,0.9,0.5,0,-1);
 }
 //————————————————————————————————————————————————————————————————————————————————————————————————————
-var dpboard_x=cam_x+cam_w-39;
+var dpboard_x=cam_x+cam_w-41;
 var dpboard_y=button_nextturn_id.y+3;
 //
 draw_set_halign(fa_right);
-sc_drawrectangle(dpboard_x,dpboard_y,dpboard_x+26,dpboard_y+15,global.color_black,global.color_white,1,0.25,0.5,0);
-sc_drawtext(dpboard_x+9,dpboard_y+1,string(card_draw_points),global.color_white,global.color_black,1,1,0,-1);
-draw_sprite_general(sp_sheet,0,16*3,16*15,16,16,dpboard_x+9,dpboard_y,1,1,0,c_white,c_white,c_white,c_white,1);
+sc_drawrectangle(dpboard_x,dpboard_y,dpboard_x+30,dpboard_y+15,global.color_black,global.color_white,1,0.25,0.5,0);
+sc_drawtext(dpboard_x+13,dpboard_y+1,string(card_draw_points),global.color_white,global.color_black,1,1,0,-1);
+draw_sprite_general(sp_sheet,0,16*3,16*15,16,16,dpboard_x+13,dpboard_y,1,1,0,c_white,c_white,c_white,c_white,1);
 //————————————————————————————————————————————————————————————————————————————————————————————————————
 if card_focus!=-1 and card_focus.card_cat=0 and card_focus_hand!=-1 and card_hold=-1 {
 	draw_set_halign(fa_center);

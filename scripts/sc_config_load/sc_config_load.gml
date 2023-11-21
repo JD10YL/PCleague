@@ -20,8 +20,8 @@ do {
 window_set_size(512*(i-1),288*(i-1));
 option_state[opt_scaling]=i-1;
 //
-option_state[opt_music]=80;
-option_state[opt_sound]=100;
+option_state[opt_music]=40;
+option_state[opt_sound]=50;
 option_state[opt_autodeck]=true;
 option_state[opt_edge]=10;
 option_state[opt_playericon]=0;

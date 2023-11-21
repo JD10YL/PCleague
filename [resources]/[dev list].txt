@@ -72,3 +72,18 @@
 ✔	sell cards
 ✔	fly to cities
 ✔	damage preview
+
+//////////////////////////////////////////////////
+
+	new berry card system & save data
+	mandatory attacking
+	adjust tutorial
+	new card stats formula
+	new pokemon stats
+	new unique abilities
+	berry transformation events
+	new roads/cities
+	new gyms
+	new league
+	region transition
+	re-adjust kyoumu

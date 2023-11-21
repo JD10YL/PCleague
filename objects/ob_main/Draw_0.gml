@@ -215,6 +215,62 @@ if credits_screen=true {
 	"(" + game_version + ")",
 	global.color_white,global.color_black,1,1,0,-1);
 }
+//
+if statistics_screen=true {
+	draw_set_halign(fa_center);
+	draw_set_font(fn_matchup);
+	//
+	sc_drawrectangle(-2,-2,room_width+2,room_height+2,global.color_black,c_white,0,0.9,0,0);
+	//
+	var timeplayed_var=stats_timeplayed, timeplayed_hours=0, timeplayed_minutes=0, timeplayed_seconds=0, timeplayed_text="";
+	timeplayed_var=floor(timeplayed_var/60);
+	timeplayed_hours=floor(timeplayed_var/3600);
+	timeplayed_minutes=floor(timeplayed_var/60)-(timeplayed_hours*60);
+	timeplayed_seconds=timeplayed_var-(timeplayed_hours*3600)-(timeplayed_minutes*60);
+	timeplayed_text=string(timeplayed_hours) + "h " + string(timeplayed_minutes) + "m " + string(timeplayed_seconds) + "s.";
+	//
+	var timeleague_var=stats_league_won_firsttime, timeleague_hours=0, timeleague_minutes=0, timeleague_seconds=0, timeleague_text="";
+	timeleague_var=floor(timeleague_var/60);
+	timeleague_hours=floor(timeleague_var/3600);
+	timeleague_minutes=floor(timeleague_var/60)-(timeleague_hours*60);
+	timeleague_seconds=timeleague_var-(timeleague_hours*3600)-(timeleague_minutes*60);
+	if stats_league_won_firsttime=0 { timeleague_text="-"; }
+	else { timeleague_text=string(timeleague_hours) + "h " + string(timeleague_minutes) + "m " + string(timeleague_seconds) + "s."; }
+	//
+	if statistics_disabled=false {
+		sc_drawtext(screen_options_x+cam_w*0.28,screen_main_y+72,
+		"Time played: " + timeplayed_text + "\n" +
+		"Total battles: " + string(stats_battles_total) + ".\n" +
+		"Total battles won: " + string(stats_battles_won) + ".\n" +
+		"Total battles lost: " + string(stats_battles_lost) + ".\n" +
+		"Battles against trainers: " + string(stats_battles_trainers) + ".\n" +
+		"Battles against gym leaders: " + string(stats_battles_gyms) + ".\n" +
+		"Battles in Crystal League: " + string(stats_battles_league) + ".\n" +
+		"Crystal League victories: " + string(stats_league_won) + ".\n" +
+		"1st Crystal League victory: " + timeleague_text + "\n" +
+		"Opponent's cards defeated: " + string(stats_cards_defeated) + ".\n" +
+		"Player's cards defeated: " + string(stats_cards_lost) + ".",
+		global.color_white,global.color_black,1,1,0,-1);
+		//
+		sc_drawtext(screen_options_x+cam_w*0.72,screen_main_y+72,
+		"Total money: $" + string(stats_money_total) + ".\n" +
+		"Total cards sold: " + string(stats_cards_sold) + ".\n" +
+		"Payouts acquired: " + string(stats_payouts) + ".\n" +
+		"Card packs opened: " + string(stats_cardpacks) + ".\n" +
+		"Berry packs opened: " + string(stats_berrypacks) + ".\n" +
+		"Free cards acquired: " + string(stats_freecards) + ".\n" +
+		"Glyphs acquired: " + string(stats_glyphs_added) + ".\n" +
+		"Level ups performed: " + string(stats_levelups) + ".\n" +
+		"Evolutions performed: " + string(stats_evolutions) + ".\n" +
+		"Tributes performed: " + string(stats_tributes) + ".\n" +
+		"Times \"not ready\": " + string(stats_notready) + ".",
+		global.color_white,global.color_black,1,1,0,-1);
+	}
+	else {
+		// SAVE COMPATIBILITY (v1.7.0.0)
+		sc_drawtext(screen_options_x+cam_w/2,screen_main_y+137,"Player stats disabled: save data is incompatible. :(",global.color_white,global.color_black,1,1,0,-1);
+	}
+}
 //————————————————————————————————————————————————————————————————————————————————————————————————————
 if ending_screen=true {
 	draw_sprite_general(sp_area,0,240*3,112*2,240,112,screen_main_x-104,screen_main_y-24,3,3,0,c_white,c_white,c_white,c_white,1); //city

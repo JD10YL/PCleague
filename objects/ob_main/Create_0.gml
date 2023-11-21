@@ -1,6 +1,6 @@
 randomize(); //random seed
 #macro game_name "Pocket Crystal League"
-#macro game_version "v1.6.0.0"
+#macro game_version "v1.7.0.0"
 window_set_caption(game_name);
 //————————————————————————————————————————————————————————————————————————————————————————————————————
 depth=-2000;
@@ -41,6 +41,9 @@ type_chart=false;
 type_chart_toggle=false;
 credits_screen=false;
 credits_screen_toggle=false;
+statistics_screen=false;
+statistics_screen_toggle=false;
+statistics_disabled=false;
 ending_screen=false;
 ending_static_timer=-1;
 //
@@ -163,7 +166,7 @@ for (var i=0; i<=999; i++;) {
 event_cost[ref_event_cardpack]=200;
 event_cost[ref_event_berry]=100;
 event_cost[ref_event_levelup]=100;
-#macro levelup_cost_multiplier 50 //100 150 200 250 300 350 400 450 500
+#macro levelup_cost_multiplier 25 //100 125 150 175 200 225 250 275 300
 event_cost[ref_event_evolution]=500;
 event_cost[ref_event_glyph]=300;
 //
@@ -285,6 +288,7 @@ sc_config_load();
 sc_config_save();
 sc_data_load();
 sc_data_save();
+window_center();
 //————————————————————————————————————————————————————————————————————————————————————————————————————
 music_player=sc_playsound(ms_main,100,true,true);
 music_beat_margin=0;
