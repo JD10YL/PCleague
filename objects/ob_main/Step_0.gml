@@ -972,6 +972,7 @@ if button_reset_config!=-1 {
 		if file_exists(config_file) { file_delete(config_file); }
 		sc_config_load();
 		sc_config_save();
+		window_center();
 		//
 		audio_sound_gain(ms_main,(option_state[opt_music]/100),0);
 		audio_sound_gain(ms_league,(option_state[opt_music]/100),0);
@@ -999,6 +1000,7 @@ repeat (options_total) {
 				else { option_state[i]=false; }
 				window_set_fullscreen(option_state[i]);
 				window_set_size(512*(option_state[opt_scaling]),288*(option_state[opt_scaling]));
+				window_center();
 			}
 			else if i=opt_vsync {
 				if option_state[i]=false { option_state[i]=true; }
@@ -1018,6 +1020,7 @@ repeat (options_total) {
 					option_state[i]--;
 				}
 				window_set_size(512*(option_state[i]),288*(option_state[i]));
+				window_center();
 			}
 			else if i=opt_autodeck {
 				if option_state[i]=false { option_state[i]=true; }
