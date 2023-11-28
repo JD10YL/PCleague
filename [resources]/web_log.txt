@@ -1,3 +1,14 @@
+[v1.8.0.0] - November 28, 2023
+
+- Added Shiny cards.
+- Added nickname system for cards (right click in Deck menu).
+- Tweaked card selling prices (cards with Glyphs, Legendaries, etc.).
+- Added new option to show dex numbers on cards.
+- Bug fix: fixed a rare issue in the data save system.
+- Some other minor improvements.
+
+——————————
+
 [v1.7.0.0] - November 21, 2023
 
 - Draw Points now remain after each turn when not used.

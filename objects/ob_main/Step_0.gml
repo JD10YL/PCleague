@@ -1,5 +1,5 @@
 if mouse_check_button(mb_middle) or instance_exists(ob_splash) or
-type_chart=true or credits_screen=true or statistics_screen=true or ending_screen=true or textbox_string[textbox_current]!="" { cursor_hide=true; }
+type_chart=true or credits_screen=true or statistics_screen=true or nickname_screen=true or ending_screen=true or textbox_string[textbox_current]!="" { cursor_hide=true; }
 else { cursor_hide=false; }
 //
 if type_chart_toggle=true {
@@ -1026,6 +1026,10 @@ repeat (options_total) {
 				if option_state[i]=false { option_state[i]=true; }
 				else { option_state[i]=false; }
 			}
+			else if i=opt_dexnumber {
+				if option_state[i]=false { option_state[i]=true; }
+				else { option_state[i]=false; }
+			}
 			else if i=opt_challenge {
 				if area_zone=0 and zone_first_lap=true and roadmap_area=0 {
 					if mouse_check_button_pressed(mb_left) {
@@ -1083,7 +1087,7 @@ repeat (options_total) {
 	}
 	else { option_focus[i]=false; }
 	//
-	if i=opt_fullscreen or i=opt_vsync or i=opt_filter {
+	if i=opt_fullscreen or i=opt_vsync or i=opt_filter or i=opt_dexnumber {
 		if option_state[i]=true { option_state_text[i]="ON"; }
 		else { option_state_text[i]="OFF"; }
 	}

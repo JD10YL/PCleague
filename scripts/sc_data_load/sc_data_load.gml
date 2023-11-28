@@ -31,16 +31,63 @@ maindeck_total=0;
 maindeck_used_total=0;
 berrydeck_total=0;
 serial_count=0;
-//
+//————————————————————————————————————————————————————————————————————————————————————————————————————
+if file_exists(data_file) {
+	var savemap=ds_map_secure_load(data_file);
+	//
+	if !is_undefined(ds_map_find_value(savemap,"area_zone")) { area_zone=ds_map_find_value(savemap,"area_zone"); }
+	if !is_undefined(ds_map_find_value(savemap,"latest_zone")) { latest_zone=ds_map_find_value(savemap,"latest_zone"); }
+	if !is_undefined(ds_map_find_value(savemap,"latest_city")) { latest_city=ds_map_find_value(savemap,"latest_city"); }
+	if !is_undefined(ds_map_find_value(savemap,"zone_first_lap")) { zone_first_lap=ds_map_find_value(savemap,"zone_first_lap"); }
+	if !is_undefined(ds_map_find_value(savemap,"roadmap_area")) { roadmap_area=ds_map_find_value(savemap,"roadmap_area"); }
+	if !is_undefined(ds_map_find_value(savemap,"roadmap_generated")) { roadmap_generated=ds_map_find_value(savemap,"roadmap_generated"); }
+	if !is_undefined(ds_map_find_value(savemap,"money")) { money=ds_map_find_value(savemap,"money"); }
+	//
+	if !is_undefined(ds_map_find_value(savemap,"challenge_mode")) { option_state[opt_challenge]=ds_map_find_value(savemap,"challenge_mode"); }
+	//
+	var i=0;
+	repeat (roadmap_full_max) {
+		var value_name="location_type_" + string(i);
+		if !is_undefined(ds_map_find_value(savemap,value_name)) { location_type[i]=ds_map_find_value(savemap,value_name); }
+		var value_name="trainer_kind_" + string(i);
+		if !is_undefined(ds_map_find_value(savemap,value_name)) { trainer_kind[i]=ds_map_find_value(savemap,value_name); }
+		var value_name="trainer_sprite_" + string(i);
+		if !is_undefined(ds_map_find_value(savemap,value_name)) { trainer_sprite[i]=ds_map_find_value(savemap,value_name); }
+		var value_name="trainer_skin_" + string(i);
+		if !is_undefined(ds_map_find_value(savemap,value_name)) { trainer_skin[i]=ds_map_find_value(savemap,value_name); }
+		var value_name="trainer_hair_color_" + string(i);
+		if !is_undefined(ds_map_find_value(savemap,value_name)) { trainer_hair_color[i]=ds_map_find_value(savemap,value_name); }
+		//
+		var ii=0;
+		repeat (3) {
+			var value_name="event_kind_" + string(ii) + "_" + string(i);
+			if !is_undefined(ds_map_find_value(savemap,value_name)) { event_kind[ii][i]=ds_map_find_value(savemap,value_name); }
+			var value_name="event_glyph_add_" + string(ii) + "_" + string(i);
+			if !is_undefined(ds_map_find_value(savemap,value_name)) { event_glyph_add[ii][i]=ds_map_find_value(savemap,value_name); }
+			ii++;
+		}
+		i++;
+	}
+	//
+	if !is_undefined(ds_map_find_value(savemap,"maindeck_total")) { maindeck_total=ds_map_find_value(savemap,"maindeck_total"); }
+	if !is_undefined(ds_map_find_value(savemap,"maindeck_used_total")) { maindeck_used_total=ds_map_find_value(savemap,"maindeck_used_total"); }
+	if !is_undefined(ds_map_find_value(savemap,"berrydeck_total")) { berrydeck_total=ds_map_find_value(savemap,"berrydeck_total"); }
+	if !is_undefined(ds_map_find_value(savemap,"serial_count")) { serial_count=ds_map_find_value(savemap,"serial_count"); }
+	//
+	ds_map_destroy(savemap);
+}
+//————————————————————————————————————————————————————————————————————————————————————————————————————
 var i=0;
 repeat (maindeck_total) {
 	main_card_id[i]=-1;
+	main_card_nickname[i]="";
 	main_card_level[i]=-1;
 	main_card_glyph_a[i]=-1;
 	main_card_glyph_b[i]=-1;
 	main_card_glyph_c[i]=-1;
 	main_card_innate[i]=-1;
 	main_card_form_value[i]=-1;
+	main_card_shiny[i]=-1;
 	main_card_serial[i]=-1;
 	i++;
 }
@@ -97,49 +144,12 @@ stats_notready=0;
 if file_exists(data_file) {
 	var savemap=ds_map_secure_load(data_file);
 	//
-	if !is_undefined(ds_map_find_value(savemap,"area_zone")) { area_zone=ds_map_find_value(savemap,"area_zone"); }
-	if !is_undefined(ds_map_find_value(savemap,"latest_zone")) { latest_zone=ds_map_find_value(savemap,"latest_zone"); }
-	if !is_undefined(ds_map_find_value(savemap,"latest_city")) { latest_city=ds_map_find_value(savemap,"latest_city"); }
-	if !is_undefined(ds_map_find_value(savemap,"zone_first_lap")) { zone_first_lap=ds_map_find_value(savemap,"zone_first_lap"); }
-	if !is_undefined(ds_map_find_value(savemap,"roadmap_area")) { roadmap_area=ds_map_find_value(savemap,"roadmap_area"); }
-	if !is_undefined(ds_map_find_value(savemap,"roadmap_generated")) { roadmap_generated=ds_map_find_value(savemap,"roadmap_generated"); }
-	if !is_undefined(ds_map_find_value(savemap,"money")) { money=ds_map_find_value(savemap,"money"); }
-	//
-	if !is_undefined(ds_map_find_value(savemap,"challenge_mode")) { option_state[opt_challenge]=ds_map_find_value(savemap,"challenge_mode"); }
-	//
-	var i=0;
-	repeat (roadmap_full_max) {
-		var value_name="location_type_" + string(i);
-		if !is_undefined(ds_map_find_value(savemap,value_name)) { location_type[i]=ds_map_find_value(savemap,value_name); }
-		var value_name="trainer_kind_" + string(i);
-		if !is_undefined(ds_map_find_value(savemap,value_name)) { trainer_kind[i]=ds_map_find_value(savemap,value_name); }
-		var value_name="trainer_sprite_" + string(i);
-		if !is_undefined(ds_map_find_value(savemap,value_name)) { trainer_sprite[i]=ds_map_find_value(savemap,value_name); }
-		var value_name="trainer_skin_" + string(i);
-		if !is_undefined(ds_map_find_value(savemap,value_name)) { trainer_skin[i]=ds_map_find_value(savemap,value_name); }
-		var value_name="trainer_hair_color_" + string(i);
-		if !is_undefined(ds_map_find_value(savemap,value_name)) { trainer_hair_color[i]=ds_map_find_value(savemap,value_name); }
-		//
-		var ii=0;
-		repeat (3) {
-			var value_name="event_kind_" + string(ii) + "_" + string(i);
-			if !is_undefined(ds_map_find_value(savemap,value_name)) { event_kind[ii][i]=ds_map_find_value(savemap,value_name); }
-			var value_name="event_glyph_add_" + string(ii) + "_" + string(i);
-			if !is_undefined(ds_map_find_value(savemap,value_name)) { event_glyph_add[ii][i]=ds_map_find_value(savemap,value_name); }
-			ii++;
-		}
-		i++;
-	}
-	//
-	if !is_undefined(ds_map_find_value(savemap,"maindeck_total")) { maindeck_total=ds_map_find_value(savemap,"maindeck_total"); }
-	if !is_undefined(ds_map_find_value(savemap,"maindeck_used_total")) { maindeck_used_total=ds_map_find_value(savemap,"maindeck_used_total"); }
-	if !is_undefined(ds_map_find_value(savemap,"berrydeck_total")) { berrydeck_total=ds_map_find_value(savemap,"berrydeck_total"); }
-	if !is_undefined(ds_map_find_value(savemap,"serial_count")) { serial_count=ds_map_find_value(savemap,"serial_count"); }
-	//
 	var i=0;
 	repeat (maindeck_total) {
 		var value_name="main_card_id_" + string(i);
 		if !is_undefined(ds_map_find_value(savemap,value_name)) { main_card_id[i]=ds_map_find_value(savemap,value_name); }
+		var value_name="main_card_nickname_" + string(i);
+		if !is_undefined(ds_map_find_value(savemap,value_name)) { main_card_nickname[i]=ds_map_find_value(savemap,value_name); }
 		var value_name="main_card_level_" + string(i);
 		if !is_undefined(ds_map_find_value(savemap,value_name)) { main_card_level[i]=ds_map_find_value(savemap,value_name); }
 		var value_name="main_card_glyph_a_" + string(i);
@@ -152,6 +162,8 @@ if file_exists(data_file) {
 		if !is_undefined(ds_map_find_value(savemap,value_name)) { main_card_innate[i]=ds_map_find_value(savemap,value_name); }
 		var value_name="main_card_form_value_" + string(i);
 		if !is_undefined(ds_map_find_value(savemap,value_name)) { main_card_form_value[i]=ds_map_find_value(savemap,value_name); }
+		var value_name="main_card_shiny_" + string(i);
+		if !is_undefined(ds_map_find_value(savemap,value_name)) { main_card_shiny[i]=ds_map_find_value(savemap,value_name); }
 		var value_name="main_card_serial_" + string(i);
 		if !is_undefined(ds_map_find_value(savemap,value_name)) { main_card_serial[i]=ds_map_find_value(savemap,value_name); }
 		i++;

@@ -38,6 +38,43 @@ if reference_id=ob_event and (y>screen_main_y+cam_h or y<screen_main_y) { //gett
 	instance_destroy();
 }
 //————————————————————————————————————————————————————————————————————————————————————————————————————
+if card_rename=true {
+	var key_input=sc_text_get_input();
+	if key_input!="" {
+		sc_playsound(sn_click,50,false,false);
+		//
+		if key_input="+" or key_input="-" {
+			if key_input="+" {
+				if ob_main.nickname_input!=card_name { card_nickname=ob_main.nickname_input; }
+				else { card_nickname=""; }
+				//
+				var i=-1;
+				do {
+					i++;
+					if ob_main.main_card_serial[i]=card_serial {
+						ob_main.main_card_nickname[i]=card_nickname;
+					}
+				} until (ob_main.main_card_serial[i]=card_serial);
+			}
+			//
+			ob_main.nickname_input="";
+			ob_main.nickname_screen=false;
+			card_rename=false;
+		}
+		else if key_input="<" {
+			ob_main.nickname_input=string_delete(ob_main.nickname_input,string_length(ob_main.nickname_input),1);
+		}
+		else if key_input="#" {
+			ob_main.nickname_input="";
+		}
+		else {
+			if string_length(ob_main.nickname_input + key_input)<=10 {
+				ob_main.nickname_input=ob_main.nickname_input + key_input;
+			}
+		}
+	}
+}
+//————————————————————————————————————————————————————————————————————————————————————————————————————
 if card_trash=true {
 	card_face=false;
 	x=ob_control.card_space_id[10].x;
@@ -209,12 +246,12 @@ else if ((mouse_x>=x and mouse_y>=y and mouse_x<x+sprite_width and mouse_y<y+spr
 		if ob_event.show_deck=false {
 			if card_face=false {
 				if (card_cat=1 and card_id=3003) or
-				(card_cat=0 and (card_stage>1 or (card_glyph_a!=-1 and card_glyph_a<glyph_common_amount) or
+				(card_cat=0 and ((card_glyph_a!=-1 and card_glyph_a<glyph_common_amount) or
 				(card_glyph_b!=-1 and card_glyph_b<glyph_common_amount) or (card_glyph_c!=-1 and card_glyph_c<glyph_common_amount))) {
 					sc_playsound(sn_rare,50,false,false);
 					sc_card_effect(x,y,0,false,true);
 				}
-				else if card_cat=0 and (card_enigma=true or card_secret=true) {
+				else if card_cat=0 and (card_enigma=true or card_secret=true or card_shiny=true) {
 					sc_playsound(sn_rare_2,50,false,false);
 					sc_card_effect(x,y,0,false,true);
 				}
@@ -228,12 +265,14 @@ else if ((mouse_x>=x and mouse_y>=y and mouse_x<x+sprite_width and mouse_y<y+spr
 				//ADD CARD
 				if card_cat=0 and ob_main.maindeck_total<maindeck_total_max and ob_event.card_prize>0 {
 					ob_main.main_card_id[ob_main.maindeck_total]=card_id;
+					ob_main.main_card_nickname[ob_main.maindeck_total]="";
 					ob_main.main_card_level[ob_main.maindeck_total]=card_level;
 					ob_main.main_card_glyph_a[ob_main.maindeck_total]=card_glyph_a;
 					ob_main.main_card_glyph_b[ob_main.maindeck_total]=card_glyph_b;
 					ob_main.main_card_glyph_c[ob_main.maindeck_total]=card_glyph_c;
 					ob_main.main_card_innate[ob_main.maindeck_total]=card_innate;
 					ob_main.main_card_form_value[ob_main.maindeck_total]=card_form_value;
+					ob_main.main_card_shiny[ob_main.maindeck_total]=card_shiny;
 					for (var i=0; i<=deck_setup_max; i++;) {
 						ob_main.serial_card_indeck[ob_main.serial_count][i]=false;
 					}
@@ -323,16 +362,34 @@ else if mouse_x>=x and mouse_y>=y and mouse_x<x+sprite_width and mouse_y<y+sprit
 			if mouse_check_button_pressed(mb_right) { sc_playsound(sn_card,50,false,false); }
 			//
 			card_delete_timer++;
+			//
+			sell_value=card_value*sell_value_multiplier;
+			if (card_glyph_a!=-1 and card_glyph_a<glyph_common_amount) or (card_glyph_b!=-1 and card_glyph_b<glyph_common_amount) or
+			(card_glyph_c!=-1 and card_glyph_c<glyph_common_amount) {
+				sell_value*=sell_glyphed_multiplier;
+			}
+			if card_enigma=true or card_secret=true { sell_value*=sell_enigma_multiplier; }
+			if card_shiny=true { sell_value*=sell_shiny_multiplier; }
+			sell_value=round(sell_value); //bankers rounding
+			//
 			if card_delete_timer=card_delete_timer_max {
 				sc_playsound(sn_faint,50,false,false);
-				ob_main.money+=round(card_value*sell_value_multiplier);
-				ob_main.stats_money_total+=round(card_value*sell_value_multiplier);
+				ob_main.money+=sell_value;
+				ob_main.stats_money_total+=sell_value;
 				ob_main.stats_cards_sold++;
 				//
 				ob_deckbuild.reorder_swap_standby=ob_deckbuild.reorder_selected;
 				ob_deckbuild.reorder_type=5;
 				instance_destroy();
 			}
+		}
+		else if mouse_check_button_pressed(mb_right) and card_indeck[0]=true and ob_main.cursor_hide=false {
+			sc_playsound(sn_click,50,false,false);
+			//
+			if card_nickname="" { ob_main.nickname_input=card_name; }
+			else { ob_main.nickname_input=card_nickname; }
+			ob_main.nickname_screen=true;
+			card_rename=true;
 		}
 		else {
 			card_delete_timer=0;

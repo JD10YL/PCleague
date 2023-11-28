@@ -14,7 +14,7 @@ repeat (18) {
 }
 //————————————————————————————————————————————————————————————————————————————————————————————————————
 var button_create;
-button_nextturn_id=instance_create_layer(cam_x+cam_w-76,cam_y+134,"instances",ob_button_31x24);
+button_nextturn_id=instance_create_layer(cam_x+cam_w-78,cam_y+134,"instances",ob_button_31x24);
 button_nextturn_id.button_id=0;
 button_sorthand_id=instance_create_layer(cam_x+76,cam_y+197,"instances",ob_button_16x16);
 button_sorthand_id.button_id=1;
@@ -89,12 +89,14 @@ repeat (ob_main.maindeck_total) {
 	if ob_main.serial_card_indeck[ob_main.main_card_serial[i]][0]=true {
 		create_card_cat=0;
 		create_card_id=ob_main.main_card_id[i];
+		create_card_nickname=ob_main.main_card_nickname[i];
 		create_card_level=ob_main.main_card_level[i];
 		create_card_glyph_a=ob_main.main_card_glyph_a[i];
 		create_card_glyph_b=ob_main.main_card_glyph_b[i];
 		create_card_glyph_c=ob_main.main_card_glyph_c[i];
 		create_card_innate=ob_main.main_card_innate[i];
 		create_card_form_value=ob_main.main_card_form_value[i];
+		create_card_shiny=ob_main.main_card_shiny[i];
 		//
 		create_enemy_randomizer=false;
 		create_enemy_costcount=false;
@@ -182,12 +184,14 @@ var i=0;
 repeat (enemycard_maindeck_total) {
 	create_card_cat=0;
 	create_card_id=enemy_card_id[card_shuffle[i]];
+	create_card_nickname="";
 	create_card_level=enemy_card_level[card_shuffle[i]];
 	create_card_glyph_a=enemy_card_glyph_a[card_shuffle[i]];
 	create_card_glyph_b=enemy_card_glyph_b[card_shuffle[i]];
 	create_card_glyph_c=enemy_card_glyph_c[card_shuffle[i]];
 	create_card_innate=enemy_card_innate[card_shuffle[i]];
 	create_card_form_value=enemy_card_form_value[card_shuffle[i]];
+	create_card_shiny=false;
 	//
 	create_enemy_randomizer=true;
 	create_enemy_costcount=true;

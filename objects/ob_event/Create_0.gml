@@ -103,12 +103,16 @@ else if event_kind=ref_event_grass or event_kind=ref_event_fire or event_kind=re
 			else if i=2 { create_card_id=016; } //pidgey
 			else if i=3 { create_card_id=021; } //spearow
 			else if i=4 { create_card_id=019; } //rattata
+			create_card_nickname="";
 			create_card_level=1;
 			create_card_glyph_a=-1;
 			create_card_glyph_b=-1;
 			create_card_glyph_c=-1;
 			create_card_innate=1;
 			create_card_form_value=0;
+			//
+			create_card_shiny=false;
+			var random_id_chance=irandom(999); if random_id_chance<5 { create_card_shiny=true; } //0.5% shiny, same as in ob_card
 		}
 		else {
 			create_card_cat=1;
@@ -161,12 +165,14 @@ event_kind=ref_event_glyph or event_kind=ref_event_tribute {
 		if ob_main.serial_card_indeck[ob_main.main_card_serial[i]][0]=true {
 			create_card_cat=0;
 			create_card_id=ob_main.main_card_id[i];
+			create_card_nickname=ob_main.main_card_nickname[i];
 			create_card_level=ob_main.main_card_level[i];
 			create_card_glyph_a=ob_main.main_card_glyph_a[i];
 			create_card_glyph_b=ob_main.main_card_glyph_b[i];
 			create_card_glyph_c=ob_main.main_card_glyph_c[i];
 			create_card_innate=ob_main.main_card_innate[i];
 			create_card_form_value=ob_main.main_card_form_value[i];
+			create_card_shiny=ob_main.main_card_shiny[i];
 			//
 			card_event[ii]=instance_create_layer(x,y,"instances",ob_card);
 			card_event[ii].num_in_all=i;

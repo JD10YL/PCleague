@@ -34,12 +34,14 @@ var i=0;
 repeat (deck_build_all_total) {
 	create_card_cat=0;
 	create_card_id=ob_main.main_card_id[i];
+	create_card_nickname=ob_main.main_card_nickname[i];
 	create_card_level=ob_main.main_card_level[i];
 	create_card_glyph_a=ob_main.main_card_glyph_a[i];
 	create_card_glyph_b=ob_main.main_card_glyph_b[i];
 	create_card_glyph_c=ob_main.main_card_glyph_c[i];
 	create_card_innate=ob_main.main_card_innate[i];
 	create_card_form_value=ob_main.main_card_form_value[i];
+	create_card_shiny=ob_main.main_card_shiny[i];
 	create_card_serial=ob_main.main_card_serial[i];
 	//
 	for (var ii=0; ii<=deck_setup_max; ii++;) {

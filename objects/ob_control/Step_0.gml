@@ -218,12 +218,14 @@ if card_hold!=-1 and (!mouse_check_button(mb_left) or ob_main.cursor_hide=true) 
 						if rock_cardspace_id!=-1 {
 							create_card_cat=0;
 							create_card_id=2503; //rock
+							create_card_nickname="";
 							create_card_level=card_hold.card_level;
 							create_card_glyph_a=-1;
 							create_card_glyph_b=-1;
 							create_card_glyph_c=-1;
 							create_card_innate=1;
 							create_card_form_value=0;
+							create_card_shiny=false;
 							create_enemy_randomizer=false;
 							create_enemy_costcount=false;
 							//

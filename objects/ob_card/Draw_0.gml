@@ -63,6 +63,9 @@ if card_cat=0 and card_face=true and in_view=true {
 	//NAMEBAR
 	draw_sprite_general(sp_sheet,0,16*1,16*2,53,10,draw_x+2,draw_y+41,1,1,0,namebar_color,global.color_white,global.color_white,namebar_color,1);
 	//
+	//SHINY
+	if card_shiny=true { draw_sprite_general(sp_sheet,0,16*3,16*1,7,6,draw_x+25,draw_y+33,1,1,0,c_white,c_white,c_white,c_white,1); }
+	//
 	//SPRITE
 	draw_sprite_general(card_sheet,0,65*(card_grid_x-1)+1,33*(card_grid_y-1)+1,64,32,draw_x-4,draw_y+3,1,1,0,c_white,c_white,c_white,c_white,1);
 	//
@@ -121,9 +124,17 @@ if card_cat=0 and card_face=true and in_view=true {
 	//
 	draw_set_font(fn_m3x6);
 	draw_set_halign(fa_center);
-	sc_drawtext(draw_x+29,draw_y+39,card_name,global.color_white,global.color_black,1,(1/1.5),0,-1);
+	var card_name_show=card_nickname, card_name_color=global.color_character_light;
+	if card_name_show="" {
+		card_name_show=card_name;
+		card_name_color=global.color_white;
+	}
+	sc_drawtext(draw_x+29,draw_y+39,card_name_show,card_name_color,global.color_black,1,(1/1.5),0,-1);
 	sc_drawtext(draw_x+29,draw_y+50,"lv " + string(card_level),global.color_gray,global.color_black,1,(1/1.7),0,-1);
 	//sc_drawtext(draw_x+29,draw_y+4,"#" + string(card_id) + "\nv " + string(card_value) + "\nfv " + string(card_form_value) + "\ns " + string(card_serial),c_aqua,c_black,1,1,0,-1);
+	//
+	draw_set_halign(fa_left);
+	if card_id<=normal_poke_id_max and ob_main.option_state[opt_dexnumber]=true { sc_drawtext(draw_x+8,draw_y+24,string(card_id),global.color_white,global.color_black,(1/4),0,0,-1); }
 	//
 	var num_color=c_white;
 	draw_set_halign(fa_left);
@@ -148,7 +159,7 @@ if card_cat=0 and card_face=true and in_view=true {
 		//
 		draw_set_font(fn_matchup);
 		draw_set_halign(fa_center);
-		sc_drawtext(draw_x+29,draw_y+11,"$" + string(round(card_value*sell_value_multiplier)),global.color_card_light,global.color_black,1,1,0,-1);
+		sc_drawtext(draw_x+29,draw_y+28,"$" + string(sell_value),global.color_card_light,global.color_black,1,1,0,-1);
 	}
 }
 //————————————————————————————————————————————————————————————————————————————————————————————————————

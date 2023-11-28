@@ -23,6 +23,7 @@ option_state[opt_scaling]=i-1;
 option_state[opt_music]=40;
 option_state[opt_sound]=50;
 option_state[opt_autodeck]=true;
+option_state[opt_dexnumber]=false;
 option_state[opt_edge]=10;
 option_state[opt_playericon]=0;
 option_state[opt_bg_type]=0;
@@ -66,6 +67,7 @@ if file_exists(config_file) {
 	if !is_undefined(ds_map_find_value(savemap,"music")) { option_state[opt_music]=ds_map_find_value(savemap,"music"); }
 	if !is_undefined(ds_map_find_value(savemap,"sound")) { option_state[opt_sound]=ds_map_find_value(savemap,"sound"); }
 	if !is_undefined(ds_map_find_value(savemap,"autodeck")) { option_state[opt_autodeck]=ds_map_find_value(savemap,"autodeck"); }
+	if !is_undefined(ds_map_find_value(savemap,"dexnumber")) { option_state[opt_dexnumber]=ds_map_find_value(savemap,"dexnumber"); }
 	if !is_undefined(ds_map_find_value(savemap,"edge_shading")) { option_state[opt_edge]=ds_map_find_value(savemap,"edge_shading"); }
 	if !is_undefined(ds_map_find_value(savemap,"player_icon")) { option_state[opt_playericon]=ds_map_find_value(savemap,"player_icon"); }
 	if !is_undefined(ds_map_find_value(savemap,"background_type")) { option_state[opt_bg_type]=ds_map_find_value(savemap,"background_type"); }

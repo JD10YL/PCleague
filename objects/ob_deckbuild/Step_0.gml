@@ -129,12 +129,14 @@ ob_main.maindeck_used_total=deck_build_used_total;
 var i=0;
 repeat (deck_build_all_total) {
 	ob_main.main_card_id[i]=deck_card_all[i].card_id;
+	ob_main.main_card_nickname[i]=deck_card_all[i].card_nickname;
 	ob_main.main_card_level[i]=deck_card_all[i].card_level;
 	ob_main.main_card_glyph_a[i]=deck_card_all[i].card_glyph_a;
 	ob_main.main_card_glyph_b[i]=deck_card_all[i].card_glyph_b;
 	ob_main.main_card_glyph_c[i]=deck_card_all[i].card_glyph_c;
 	ob_main.main_card_innate[i]=deck_card_all[i].card_innate;
 	ob_main.main_card_form_value[i]=deck_card_all[i].card_form_value;
+	ob_main.main_card_shiny[i]=deck_card_all[i].card_shiny;
 	ob_main.main_card_serial[i]=deck_card_all[i].card_serial;
 	//
 	ob_main.serial_card_indeck[ob_main.main_card_serial[i]][0]=deck_card_all[i].card_indeck[0];

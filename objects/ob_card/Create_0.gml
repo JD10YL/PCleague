@@ -35,6 +35,13 @@ effect_damaged=0;
 card_delete_timer=0;
 card_delete_timer_max=60;
 //
+if card_cat=0 and variable_instance_exists(reference_id,"create_card_nickname") { card_nickname=reference_id.create_card_nickname; }
+else { card_nickname=""; }
+card_rename=false;
+//
+card_shiny=false;
+sell_value=0;
+//
 auto_turn_add=false;
 if card_cat=0 and reference_id=ob_control { enemy_randomizer=reference_id.create_enemy_randomizer; }
 else { enemy_randomizer=false; }
@@ -80,6 +87,9 @@ if card_cat=0 {
 			card_glyph_b=-1;
 			card_glyph_c=-1;
 			card_form_value=irandom(999);
+			//
+			var random_id_chance=irandom(999); if random_id_chance<5 and card_id<=normal_poke_id_max { card_shiny=true; } //0.5% shiny, same as in ob_event
+			else { card_shiny=false; }
 		}
 		//————————————————————————————————————————————————————————————————————————————————————————————————————
 		else if random_card=true and enemy_randomizer=true {
@@ -146,7 +156,11 @@ if card_cat=0 {
 			card_glyph_c=reference_id.create_card_glyph_c;
 			card_innate=reference_id.create_card_innate;
 			card_form_value=reference_id.create_card_form_value;
+			card_shiny=reference_id.create_card_shiny;
 		}
+		//————————————————————————————————————————————————————————————————————————————————————————————————————
+		// SAVE COMPATIBILITY (v1.8.0.0)
+		if card_shiny=-1 { card_shiny=false; }
 		//————————————————————————————————————————————————————————————————————————————————————————————————————
 		sc_pokelist();
 		//————————————————————————————————————————————————————————————————————————————————————————————————————

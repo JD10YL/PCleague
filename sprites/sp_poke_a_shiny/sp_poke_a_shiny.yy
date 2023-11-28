@@ -1,10 +1,10 @@
 {
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
-  "name": "sp_sheet",
-  "bbox_bottom": 311,
-  "bbox_left": 1,
-  "bbox_right": 649,
+  "name": "sp_poke_a_shiny",
+  "bbox_bottom": 1221,
+  "bbox_left": 0,
+  "bbox_right": 975,
   "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,
@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"11b0a4cb-8b91-4f2c-85e2-2d631e7069d9",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"b0658d8a-3939-4214-9adb-da79f81d3eb7",},
   ],
   "gridX": 0,
   "gridY": 0,
-  "height": 320,
+  "height": 1222,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"5f5c8511-271f-410b-901e-90dc62e804b7","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"03968c97-6caf-4c64-b5fd-9bb601d4eb8c","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -32,7 +32,7 @@
   "sequence": {
     "resourceType": "GMSequence",
     "resourceVersion": "1.4",
-    "name": "sp_sheet",
+    "name": "sp_poke_a_shiny",
     "autoRecord": true,
     "backdropHeight": 768,
     "backdropImageOpacity": 0.5,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"11b0a4cb-8b91-4f2c-85e2-2d631e7069d9","path":"sprites/sp_sheet/sp_sheet.yy",},},},"Disabled":false,"id":"3b3ec921-6e0d-4965-87a7-96569b96ef6d","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"b0658d8a-3939-4214-9adb-da79f81d3eb7","path":"sprites/sp_poke_a_shiny/sp_poke_a_shiny.yy",},},},"Disabled":false,"id":"791edab0-703a-4f4b-a155-173d9e5a157c","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
@@ -70,5 +70,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 656,
+  "width": 976,
 }

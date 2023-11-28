@@ -206,7 +206,7 @@ if credits_screen=true {
 	"This is a fangame made just for fun and it's in no way related to Nintendo." + "\n\n" +
 	"Official art/sprites by GAME FREAK." + "\n" +
 	"Official music by ICHIRO SHIMAKURA (HUDSON SOFT)." + "\n" +
-	"Custom art/sprites by MOODYTAIL." + "\n" +
+	"Custom art/sprites by MOODYTAIL and POKESPRITE." + "\n" +
 	"Sound effects by MOODYTAIL and TOM VIAN." + "\n" +
 	"Fonts by DANIEL LINSSEN and EEVE SOMEPX." + "\n\n" +
 	"Created by MOODYTAIL." + "\n" +
@@ -270,6 +270,15 @@ if statistics_screen=true {
 		// SAVE COMPATIBILITY (v1.7.0.0)
 		sc_drawtext(screen_options_x+cam_w/2,screen_main_y+137,"Player stats disabled: save data is incompatible. :(",global.color_white,global.color_black,1,1,0,-1);
 	}
+}
+//
+if nickname_screen=true {
+	draw_set_halign(fa_center);
+	draw_set_font(fn_matchup);
+	//
+	sc_drawrectangle(-2,-2,room_width+2,room_height+2,global.color_black,c_white,0,0.9,0,0);
+	sc_drawtext(screen_deck_x+cam_w/2,screen_main_y+122,"Input new nickname.\n[Enter] to confirm, [Escape] to cancel.",global.color_white,global.color_black,1,1,0,-1);
+	sc_drawtext(screen_deck_x+cam_w/2,screen_main_y+152,nickname_input,global.color_character_light,global.color_black,1,1,0,-1);
 }
 //————————————————————————————————————————————————————————————————————————————————————————————————————
 if ending_screen=true {

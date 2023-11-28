@@ -1,6 +1,6 @@
 randomize(); //random seed
 #macro game_name "Pocket Crystal League"
-#macro game_version "v1.7.0.0"
+#macro game_version "v1.8.0.0"
 window_set_caption(game_name);
 //————————————————————————————————————————————————————————————————————————————————————————————————————
 depth=-2000;
@@ -44,6 +44,8 @@ credits_screen_toggle=false;
 statistics_screen=false;
 statistics_screen_toggle=false;
 statistics_disabled=false;
+nickname_screen=false;
+nickname_input="";
 ending_screen=false;
 ending_static_timer=-1;
 //
@@ -113,7 +115,10 @@ textbox_char_pos=0;
 #macro money_payout_penalty_multiplier 10
 #macro money_badge_base 200 //200 325 450 575 700 825 950 1075 1200 (minimum should be enough for a card pack)
 #macro money_badge_area_bonus 125
-#macro sell_value_multiplier 2.5 //bankers rounding
+#macro sell_value_multiplier 2.5
+#macro sell_glyphed_multiplier 1.25
+#macro sell_enigma_multiplier 1.5
+#macro sell_shiny_multiplier 2
 #macro tutorial_payout 500
 //
 battle_hp[0]=5; //10
@@ -201,7 +206,7 @@ tooltip_lines=0;
 #macro ref_glyph_transform 101
 #macro ref_glyph_sketch 102
 //————————————————————————————————————————————————————————————————————————————————————————————————————
-#macro options_total 11
+#macro options_total 12
 #macro playericon_max 15
 //
 #macro opt_fullscreen 0
@@ -211,10 +216,11 @@ tooltip_lines=0;
 #macro opt_music 4
 #macro opt_sound 5
 #macro opt_autodeck 6
-#macro opt_edge 7
-#macro opt_challenge 8
-#macro opt_playericon 9
-#macro opt_bg_type 10
+#macro opt_dexnumber 7
+#macro opt_edge 8
+#macro opt_challenge 9
+#macro opt_playericon 10
+#macro opt_bg_type 11
 //
 #macro ch_resolution 1
 #macro ch_dominance 2
@@ -228,13 +234,14 @@ for (var i=0; i<options_total; i++;) {
 	else if i=opt_music { option_name[i]="Music: "; }
 	else if i=opt_sound { option_name[i]="Sound Effects: "; }
 	else if i=opt_autodeck { option_name[i]="New Cards: "; }
+	else if i=opt_dexnumber { option_name[i]="Card Numbers: "; }
 	else if i=opt_edge { option_name[i]="Edge Shading: "; }
 	else if i=opt_challenge { option_name[i]="Challenge Mode: "; }
 	else if i=opt_playericon { option_name[i]="Player Icon: "; }
 	else if i=opt_bg_type { option_name[i]="Battle Background Style: "; }
 	//
 	option_x[i]=22;
-	option_y[i]=19+18*i;
+	option_y[i]=22+16*i;
 	option_focus[i]=false;
 	option_state_text[i]="";
 }
@@ -257,7 +264,7 @@ for (var i=0; i<colorsetup_total; i++;) {
 	colorsetup_r_x[i]=colorsetup_main_x[i]+166;
 	colorsetup_g_x[i]=colorsetup_r_x[i]+38;
 	colorsetup_b_x[i]=colorsetup_g_x[i]+38;
-	colorsetup_y[i]=19+13*i+18*options_total;
+	colorsetup_y[i]=22+13*i+16*options_total;
 	colorsetup_focus_r[i]=false;
 	colorsetup_focus_g[i]=false;
 	colorsetup_focus_b[i]=false;
