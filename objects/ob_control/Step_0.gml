@@ -407,6 +407,7 @@ if ob_main.playing_tutorial=false or (ob_main.playing_tutorial=true and (sc_tuto
 			if turn_num>1 { card_draw_points+=2; }
 			else { card_draw_points+=5; }
 			//enemycard_draw_points=0;
+			tooltip_timer=tooltip_timer_max;
 			//
 			for (var i=5; i<=9; i++;) {
 				if card_space_id[i].occupy_id!=-1 {
@@ -424,7 +425,6 @@ if ob_main.playing_tutorial=false or (ob_main.playing_tutorial=true and (sc_tuto
 		}
 		//
 		turn_num++;
-		tooltip_timer=tooltip_timer_max;
 		turn_splash_timer=turn_splash_timer_max;
 		first_turn_attack_warning=false;
 		hand_full_draw_warning=false;

@@ -2,7 +2,7 @@ function sc_glyph_random(argument0) {
 /// @param environment
 //————————————————————————————————————————————————————————————————————————————————————————————————————
 if argument0=false {
-	var var_random=irandom(954);
+	var var_random=irandom(1004);
 	//
 	if var_random<75 { return ref_glyph_lucky; } //75 lucky
 	else if var_random<175 { return ref_glyph_harvest; } //100 harvest
@@ -22,6 +22,7 @@ if argument0=false {
 	else if var_random<880 { return ref_glyph_berserk; } //50 berserk
 	else if var_random<930 { return ref_glyph_adaptability; } //50 adaptability
 	else if var_random<955 { return ref_glyph_recovery; } //25 recovery
+	else if var_random<1005 { return ref_glyph_inertia; } //50 inertia
 }
 //————————————————————————————————————————————————————————————————————————————————————————————————————
 else {

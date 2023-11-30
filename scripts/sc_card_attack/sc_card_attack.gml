@@ -131,6 +131,16 @@ with (argument1) {
 						else { ob_control.enemycard_draw_points+=2; }
 					}
 					//
+					if sc_glyph_check(id,ref_glyph_inertia,true) { //glyph: inertia
+						if card_target.card_enemy=false {
+							ob_control.enemycard_draw_points++;
+						}
+						else {
+							ob_control.card_draw_points++;
+							ob_control.tooltip_timer=ob_control.tooltip_timer_max;
+						}
+					}
+					//
 					var chance_tenacity=choose(true,false);
 					if sc_glyph_check(card_target,ref_glyph_tenacity,true) and chance_tenacity=true and
 					((card_target.card_enemy=false and ob_control.card_hand_total<ob_control.card_hand_max) or

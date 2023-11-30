@@ -1,3 +1,12 @@
+[v1.8.1.0] - November 29, 2023
+
+- Added new Glyph: "Inertia" (grants 1 DP whenever it destroys another card).
+- Shield Glyph now raises defense by 2 (up from 1).
+- Bug fix: fixed engine issue when alt-tabbing or minimizing the game.
+- Some other minor improvements.
+
+——————————
+
 [v1.8.0.0] - November 28, 2023
 
 - Added Shiny cards.

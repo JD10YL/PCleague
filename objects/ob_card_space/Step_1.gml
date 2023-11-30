@@ -22,11 +22,11 @@ if instance_exists(ob_control) {
 	//glyph: shield
 	if ((space_slot>0 and space_slot<=4) or (space_slot>5 and space_slot<=9)) and
 	ob_control.card_space_id[space_slot-1].occupy_id!=-1 and sc_glyph_check(ob_control.card_space_id[space_slot-1].occupy_id,ref_glyph_shield,true) {
-		card_bonus_def+=1;
+		card_bonus_def+=2;
 	}
 	if ((space_slot>=0 and space_slot<4) or (space_slot>=5 and space_slot<9)) and
 	ob_control.card_space_id[space_slot+1].occupy_id!=-1 and sc_glyph_check(ob_control.card_space_id[space_slot+1].occupy_id,ref_glyph_shield,true) {
-		card_bonus_def+=1;
+		card_bonus_def+=2;
 	}
 	//
 	//glyph: debilitate

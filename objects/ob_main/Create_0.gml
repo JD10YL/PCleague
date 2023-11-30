@@ -1,6 +1,3 @@
-randomize(); //random seed
-#macro game_name "Pocket Crystal League"
-#macro game_version "v1.8.0.0"
 window_set_caption(game_name);
 //————————————————————————————————————————————————————————————————————————————————————————————————————
 depth=-2000;
@@ -181,7 +178,7 @@ current_glyph_add=-1;
 tooltip_text="";
 tooltip_lines=0;
 //————————————————————————————————————————————————————————————————————————————————————————————————————
-#macro glyph_common_amount 18
+#macro glyph_common_amount 19
 //
 #macro ref_glyph_lucky 00
 #macro ref_glyph_harvest 01
@@ -201,6 +198,7 @@ tooltip_lines=0;
 #macro ref_glyph_berserk 15
 #macro ref_glyph_adaptability 16
 #macro ref_glyph_recovery 17
+#macro ref_glyph_inertia 18
 //
 #macro ref_glyph_mist 100
 #macro ref_glyph_transform 101
@@ -303,8 +301,8 @@ button_exit_game=-1;
 button_reset_config=-1;
 button_delete_data=-1;
 //————————————————————————————————————————————————————————————————————————————————————————————————————
-global.color_white=make_colour_rgb(230,230,230);
-global.color_black=make_colour_rgb(40,40,40);
+global.color_white=make_colour_rgb(230,230,230); //same as in ob_load (draw)
+global.color_black=make_colour_rgb(40,40,40); //same as in ob_load (draw)
 global.color_gray=make_colour_rgb(190,190,190);
 global.color_card_light=make_colour_rgb(233,230,222);
 global.color_card_mid=make_colour_rgb(205,198,181);

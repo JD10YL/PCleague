@@ -11,7 +11,7 @@ if argument1=false {
 		case ref_glyph_courage: return "// COURAGE //\nRaises attack of nearby friendly Pokemon by 2."; break;
 		case ref_glyph_piercing: return "// PIERCING ATTACK //\nAlways attacks the enemy trainer directly."; break;
 		case ref_glyph_counter: return "// COUNTERATTACK //\nWhen attacked, the attacker is also hurt (without fainting)."; break;
-		case ref_glyph_shield: return "// SHIELD //\nRaises defense of nearby friendly Pokemon by 1."; break;
+		case ref_glyph_shield: return "// SHIELD //\nRaises defense of nearby friendly Pokemon by 2."; break;
 		case ref_glyph_medic: return "// MEDIC //\nFully heals all friendly cards when played."; break;
 		case ref_glyph_tenacity: return "// TENACITY //\nWhen fainting, it has a 50% chance to return to hand (if not full)."; break;
 		case ref_glyph_bulwark: return "// BULWARK //\nSummons rocks on each empty side when played."; break;
@@ -22,6 +22,7 @@ if argument1=false {
 		case ref_glyph_berserk: return "// BERSERK //\nWhen HP is 1/3 or less (or just 1, if hurt),\nbase attack is doubled."; break;
 		case ref_glyph_adaptability: return "// ADAPTABILITY //\nType-advantage attacks deal 2 extra points of bonus damage."; break;
 		case ref_glyph_recovery: return "// RECOVERY //\nRecovers 1 HP at the beginning of each active turn."; break;
+		case ref_glyph_inertia: return "// INERTIA //\nGrants 1 DP (Draw Points) whenever it destroys another card."; break;
 		//
 		case ref_glyph_mist: return "// MIST //\nWhile this card is active, Glyphs have no effect."; break;
 		case ref_glyph_transform: return "// TRANSFORM //\nTransforms into the opposing enemy Pokemon."; break;

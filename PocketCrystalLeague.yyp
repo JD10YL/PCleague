@@ -109,6 +109,7 @@
     {"id":{"name":"sc_textbox","path":"scripts/sc_textbox/sc_textbox.yy",},},
     {"id":{"name":"ob_card_splash","path":"objects/ob_card_splash/ob_card_splash.yy",},},
     {"id":{"name":"sc_data_save","path":"scripts/sc_data_save/sc_data_save.yy",},},
+    {"id":{"name":"ob_load","path":"objects/ob_load/ob_load.yy",},},
     {"id":{"name":"sn_click","path":"sounds/sn_click/sn_click.yy",},},
     {"id":{"name":"sc_drawrectangle","path":"scripts/sc_drawrectangle/sc_drawrectangle.yy",},},
     {"id":{"name":"ob_damage_num","path":"objects/ob_damage_num/ob_damage_num.yy",},},
@@ -123,6 +124,7 @@
     {"id":{"name":"sc_card_level_stats_all","path":"scripts/sc_card_level_stats_all/sc_card_level_stats_all.yy",},},
     {"id":{"name":"fn_m6x11_XL","path":"fonts/fn_m6x11_XL/fn_m6x11_XL.yy",},},
     {"id":{"name":"ob_card","path":"objects/ob_card/ob_card.yy",},},
+    {"id":{"name":"rm_load","path":"rooms/rm_load/rm_load.yy",},},
     {"id":{"name":"AI_play_script","path":"scripts/AI_play_script/AI_play_script.yy",},},
     {"id":{"name":"sc_playsound","path":"scripts/sc_playsound/sc_playsound.yy",},},
     {"id":{"name":"sn_upgrade","path":"sounds/sn_upgrade/sn_upgrade.yy",},},
@@ -137,6 +139,7 @@
     {"id":{"name":"rm_main","path":"rooms/rm_main/rm_main.yy",},},
   ],
   "RoomOrderNodes": [
+    {"roomId":{"name":"rm_load","path":"rooms/rm_load/rm_load.yy",},},
     {"roomId":{"name":"rm_main","path":"rooms/rm_main/rm_main.yy",},},
   ],
   "templateType": null,
